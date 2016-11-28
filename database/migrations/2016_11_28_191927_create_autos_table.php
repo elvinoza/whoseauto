@@ -18,8 +18,8 @@ class CreateAutosTable extends Migration
             $table->integer('car_id');
             $table->integer('model_id');
             $table->integer('color_id');
-            $table->dateTime('last_search_time');
-            $table->integer('views');
+            $table->dateTime('last_search_time')->nullable()	;
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }
