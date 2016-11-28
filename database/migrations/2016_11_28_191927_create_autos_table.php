@@ -15,9 +15,9 @@ class CreateAutosTable extends Migration
         Schema::create('autos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('number', 6)->unique();
-            $table->integer('car_id');
-            $table->integer('model_id');
-            $table->integer('color_id');
+            $table->integer('car_id')->nullable();
+            $table->integer('model_id')->nullable();
+            $table->integer('color_id')->nullable();
             $table->dateTime('last_search_time')->nullable();
             $table->integer('views')->default(0);
             $table->timestamps();
