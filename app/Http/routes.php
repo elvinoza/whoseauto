@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+
+Route::post('/{number}', [
+    'as' => 'get_auto',
+    'uses' => 'AutoController@getAuto'
+]);
+
